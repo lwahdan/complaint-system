@@ -35,6 +35,11 @@
             </ul>
         </div>
     @endif
+    @if ($errors->has('throttle'))
+        <div class="alert alert-danger">
+            Too many attempts. Please try again in a minute.
+        </div>
+    @endif
     @yield('content')
     @include('layouts.footer')
 </body>
