@@ -4,34 +4,34 @@
     <!-- Header/Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
         <div class="container">
-            <a class="navbar-brand d-flex align-items-center" href="#">
+            <a class="navbar-brand d-flex align-items-center nav-link" href="#">
                 <img src="{{ asset('images/logo.png') }}" alt="حماية/Protect Logo">
-                <span>حماية/Protect</span>
+                <span>حماية</span>
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#features">Features</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#how-it-works">How It Works</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#faq">FAQ</a>
-                    </li>
-                </ul>
-                <div class="d-flex">
-                    @auth
-                        <a href="{{ url('/dashboard') }}" class="btn btn-outline-primary me-2">Dashboard</a>
-                    @else
-                        <a href="{{ route('login') }}" class="btn btn-primary me-2">Login</a>
-                        <a href="{{ route('register') }}" class="btn btn-outline-secondary">Register</a>
-                    @endauth
-                </div>
+            <div class="d-flex">
+                @auth
+                    <a href="{{ url('/dashboard') }}" class="btn btn-outline-primary me-2">Dashboard</a>
+                @else
+                    <a href="{{ route('login') }}" class="btn btn-primary me-2">Login</a>
+                    <a href="{{ route('register') }}" class="btn btn-outline-secondary">Register</a>
+                @endauth
             </div>
+            {{-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"> --}}
+                {{-- <span class="navbar-toggler-icon"></span> --}}
+            {{-- </button> --}}
+            {{-- <div class="collapse navbar-collapse" id="navbarNav"> --}}
+                {{-- <ul class="navbar-nav me-auto mb-2 mb-lg-0"> --}}
+                    {{-- <li class="nav-item"> --}}
+                        {{-- <a class="nav-link" href="#features">Features</a> --}}
+                    {{-- </li> --}}
+                    {{-- <li class="nav-item"> --}}
+                        {{-- <a class="nav-link" href="#how-it-works">How It Works</a> --}}
+                    {{-- </li> --}}
+                    {{-- <li class="nav-item"> --}}
+                        {{-- <a class="nav-link" href="#faq">FAQ</a> --}}
+                    {{-- </li> --}}
+                {{-- </ul> --}}
+            {{-- </div> --}}
         </div>
     </nav>
 
@@ -41,14 +41,17 @@
             <div class="row align-items-center">
                 <div class="col-lg-6 hero-content">
                     <h1>Secure Complaint Management With حماية/Protect</h1>
-                    <p class="lead mb-4">Empower your organization with a secure, private, and efficient system for managing internal complaints and concerns.</p>
+                    <p class="lead mb-4">Empower your organization with a secure, private, and efficient system for managing
+                        internal complaints and concerns.</p>
                     <div class="d-flex flex-wrap">
                         <a href="{{ route('register') }}" class="btn btn-light btn-lg me-3 mb-2">Get Started</a>
                         <a href="#features" class="btn btn-outline-light btn-lg mb-2">Learn More</a>
                     </div>
                 </div>
                 <div class="col-lg-6 mt-4 mt-lg-0">
-                    <img src="{{ asset('images/hero-secure-complaints.jpg') }}" alt="Secure Complaint System" class="hero-image" onerror="this.src='https://via.placeholder.com/600x400?text=Secure+Complaint+System'">
+                    <img src="{{ asset('images/hero-secure-complaints.jpg') }}" alt="Secure Complaint System"
+                        class="hero-image"
+                        onerror="this.src='https://via.placeholder.com/600x400?text=Secure+Complaint+System'">
                 </div>
             </div>
         </div>
@@ -108,7 +111,8 @@
                             <i class="fas fa-shield-alt"></i>
                         </div>
                         <h4>Two-Factor Authentication</h4>
-                        <p>Enhanced account security with 2FA protection for all user accounts, preventing unauthorized access.</p>
+                        <p>Enhanced account security with 2FA protection for all user accounts, preventing unauthorized
+                            access.</p>
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -117,7 +121,8 @@
                             <i class="fas fa-lock"></i>
                         </div>
                         <h4>End-to-End Encryption</h4>
-                        <p>All complaints are encrypted to ensure that only authorized personnel can access sensitive information.</p>
+                        <p>All complaints are encrypted to ensure that only authorized personnel can access sensitive
+                            information.</p>
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -199,7 +204,8 @@
             <div class="row g-4">
                 <div class="col-md-6">
                     <div class="testimonial-card">
-                        <p>"Implementing حماية/Protect has transformed our internal complaint management process. The security features give our employees confidence that their concerns are handled privately."</p>
+                        <p>"Implementing حماية/Protect has transformed our internal complaint management process. The
+                            security features give our employees confidence that their concerns are handled privately."</p>
                         <div class="testimonial-author">
                             <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Testimonial Author">
                             <div>
@@ -211,7 +217,8 @@
                 </div>
                 <div class="col-md-6">
                     <div class="testimonial-card">
-                        <p>"The 2FA and audit logs have been crucial for our compliance requirements. حماية/Protect provided exactly what we needed to securely manage internal feedback."</p>
+                        <p>"The 2FA and audit logs have been crucial for our compliance requirements. حماية/Protect provided
+                            exactly what we needed to securely manage internal feedback."</p>
                         <div class="testimonial-author">
                             <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Testimonial Author">
                             <div>
@@ -237,49 +244,63 @@
                     <div class="accordion" id="faqAccordion">
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="headingOne">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                     How secure is the complaint data?
                                 </button>
                             </h2>
-                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                                data-bs-parent="#faqAccordion">
                                 <div class="accordion-body">
-                                    All complaint data is encrypted using 256-bit encryption. Only authorized administrators can access the information, and every access is logged for security audit purposes.
+                                    All complaint data is encrypted using 256-bit encryption. Only authorized administrators
+                                    can access the information, and every access is logged for security audit purposes.
                                 </div>
                             </div>
                         </div>
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="headingTwo">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                                     How does two-factor authentication work?
                                 </button>
                             </h2>
-                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                                data-bs-parent="#faqAccordion">
                                 <div class="accordion-body">
-                                    Our 2FA system requires users to verify their identity using two separate methods: their password and a time-based code sent to their mobile device, significantly enhancing account security.
+                                    Our 2FA system requires users to verify their identity using two separate methods: their
+                                    password and a time-based code sent to their mobile device, significantly enhancing
+                                    account security.
                                 </div>
                             </div>
                         </div>
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="headingThree">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                                     Can administrators edit or delete complaints?
                                 </button>
                             </h2>
-                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                                data-bs-parent="#faqAccordion">
                                 <div class="accordion-body">
-                                    Administrators can only change the status of complaints (pending, in progress, resolved) but cannot edit or delete the content to maintain integrity. All status changes are recorded in the audit logs.
+                                    Administrators can only change the status of complaints (pending, in progress, resolved)
+                                    but cannot edit or delete the content to maintain integrity. All status changes are
+                                    recorded in the audit logs.
                                 </div>
                             </div>
                         </div>
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="headingFour">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
                                     Can the system be customized for our organization?
                                 </button>
                             </h2>
-                            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+                            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                                data-bs-parent="#faqAccordion">
                                 <div class="accordion-body">
-                                    Yes, حماية/Protect can be tailored to your specific organizational needs while maintaining its core security features. Contact us for customization options.
+                                    Yes, حماية/Protect can be tailored to your specific organizational needs while
+                                    maintaining its core security features. Contact us for customization options.
                                 </div>
                             </div>
                         </div>
@@ -300,13 +321,15 @@
                 <div class="col-md-6">
                     <div class="trust-box">
                         <h4><i class="fas fa-shield-alt me-2 text-primary"></i> Security Compliance</h4>
-                        <p>حماية/Protect is designed to meet stringent security standards, with regular security audits and penetration testing to ensure your complaint data remains protected.</p>
+                        <p>حماية/Protect is designed to meet stringent security standards, with regular security audits and
+                            penetration testing to ensure your complaint data remains protected.</p>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="trust-box">
                         <h4><i class="fas fa-lock me-2 text-primary"></i> Data Privacy</h4>
-                        <p>We implement strict data privacy measures to ensure that sensitive information is accessible only to authorized personnel and protected from unauthorized access.</p>
+                        <p>We implement strict data privacy measures to ensure that sensitive information is accessible only
+                            to authorized personnel and protected from unauthorized access.</p>
                     </div>
                 </div>
             </div>
@@ -335,7 +358,8 @@
             <div class="row">
                 <div class="col-lg-4 mb-4 mb-lg-0">
                     <img src="{{ asset('images/logo.png') }}" alt="حماية/Protect Logo" class="footer-logo">
-                    <p>Secure complaint management system designed for organizations that prioritize security and privacy.</p>
+                    <p>Secure complaint management system designed for organizations that prioritize security and privacy.
+                    </p>
                     <div class="social-icons mt-3">
                         <a href="#"><i class="fab fa-twitter"></i></a>
                         <a href="#"><i class="fab fa-linkedin"></i></a>
