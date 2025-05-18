@@ -1,13 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
-
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6 hero-content">
-                    <h1>Secure Complaint Management With حماية/Protect</h1>
+                    <h1>Secure Complaint Management System With Protect</h1>
                     <p class="lead mb-4">Empower your organization with a secure, private, and efficient system for managing
                         internal complaints and concerns.</p>
                     <div class="d-flex flex-wrap">
@@ -15,10 +14,9 @@
                         <a href="#features" class="btn btn-outline-light btn-lg mb-2">Learn More</a>
                     </div>
                 </div>
-                <div class="col-lg-6 mt-4 mt-lg-0">
+                <div class="col-lg-6 mt-4 mt-lg-0 d-flex justify-content-center">
                     <img src="{{ asset('images/hero-secure-complaints.jpg') }}" alt="Secure Complaint System"
-                        class="hero-image"
-                        onerror="this.src='https://via.placeholder.com/600x400?text=Secure+Complaint+System'">
+                        class="hero-image">
                 </div>
             </div>
         </div>
@@ -36,14 +34,14 @@
                     <div class="step-box text-center">
                         <div class="step-number mx-auto">1</div>
                         <h4>Register</h4>
-                        <p>Create your secure account with two-factor authentication protection.</p>
+                        <p>Create your secure account with authentication protection.</p>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="step-box text-center">
                         <div class="step-number mx-auto">2</div>
                         <h4>Submit</h4>
-                        <p>File your complaint privately with end-to-end encryption.</p>
+                        <p>File your complaint privately and securely with end-to-end encryption.</p>
                     </div>
                 </div>
                 <div class="col-md-3">
@@ -77,8 +75,8 @@
                         <div class="feature-icon">
                             <i class="fas fa-shield-alt"></i>
                         </div>
-                        <h4>Two-Factor Authentication</h4>
-                        <p>Enhanced account security with 2FA protection for all user accounts, preventing unauthorized
+                        <h4>Secure Login</h4>
+                        <p>Password-based login with hashed credentials and role-based redirects to prevent unauthorized
                             access.</p>
                     </div>
                 </div>
@@ -126,6 +124,39 @@
                         </div>
                         <h4>User Dashboard</h4>
                         <p>Intuitive interface for users to monitor and manage their submitted complaints.</p>
+                    </div>
+                </div>
+                <!-- Rate Limiting -->
+                <div class="col-md-4">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-virus"></i>
+                        </div>
+                        <h4>Anti-Spam Protection</h4>
+                        <p>Rate limiting is applied on login and complaint submission to reduce brute-force or flooding
+                            attacks.</p>
+                    </div>
+                </div>
+                <!-- Fail-Safe Defaults -->
+                <div class="col-md-4">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h4>Fail-Safe Access Control</h4>
+                        <p>All system routes are protected with authentication and role checks, ensuring no unauthorized
+                            access even by default.</p>
+                    </div>
+                </div>
+                <!-- Input Validation -->
+                <div class="col-md-4">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <h4>Secure Input Validation</h4>
+                        <p>Every form submission is validated on the server side to prevent malformed or malicious data from
+                            entering the system.</p>
                     </div>
                 </div>
             </div>
@@ -184,7 +215,7 @@
                 </div>
                 <div class="col-md-6">
                     <div class="testimonial-card">
-                        <p>"The 2FA and audit logs have been crucial for our compliance requirements. حماية/Protect provided
+                        <p>"The audit logs have been crucial for our compliance requirements. حماية/Protect provided
                             exactly what we needed to securely manage internal feedback."</p>
                         <div class="testimonial-author">
                             <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Testimonial Author">
