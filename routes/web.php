@@ -38,7 +38,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     // Redirect based on role
     Route::get('/dashboard', function () {
         if (auth()->user()->role === 'admin') {
-            return redirect()->route('admin.dashboard');
+            return redirect()->route('admin.index');
         }
         if (auth()->user()->role === 'user') {
             return redirect()->route('user.dashboard');
@@ -48,14 +48,32 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
     // User Dashboard
     Route::get('/user/dashboard', [UserController::class, 'dashboard'])->name('user.dashboard');
-    // Route::resource('/complaints', ComplaintController::class)->except(['edit', 'update', 'destroy']);
+    Route::post('/complaints', [ComplaintController::class, 'store'])->name('complaints.store');
+    // Route::get('/complaints/{id}', [ComplaintController::class, 'show'])->name('complaints.show');
 });
 
 // Admin-Only Routes
 Route::middleware(['auth', 'is_admin'])->prefix('admin')->group(function () {
-    Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
-    //Route::get('/complaints', [AdminController::class, 'viewComplaints'])->name('admin.complaints');
-    //Route::post('/complaints/{id}/status', [AdminController::class, 'updateStatus'])->name('admin.complaints.updateStatus');
+    //Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
+    Route::get('/dashboard', [AdminController::class, 'dashboard_index'])->name('admin.index');
+    //user
+    Route::get('/users', [AdminController::class, 'viewUsers'])->name('admin.users');
+    Route::get('/users/create', [AdminController::class, 'createUser'])->name('admin.users.create');
+    Route::post('/users', [AdminController::class, 'storeUser'])->name('admin.users.store');
+    Route::get('/users/{id}/edit', [AdminController::class, 'editUser'])->name('admin.users.edit');
+    Route::put('/users/{id}', [AdminController::class, 'updateUser'])->name('admin.users.update');
+    Route::delete('/users/{id}', [AdminController::class, 'destroyUser'])->name('admin.users.destroy');
+
+    //complaint
+    Route::get('/complaints', [AdminController::class, 'viewComplaints'])->name('admin.complaints');
+    Route::get('/complaints/{id}', [AdminController::class, 'showComplaint'])->name('admin.complaints.show');
+     Route::get('/complaints/{id}/edit', [AdminController::class, 'editComplaint'])->name('admin.complaints.edit');
+    Route::put('/complaints/{id}', [AdminController::class, 'updateComplaint'])->name('admin.complaints.update');
+
+    Route::post('/complaints/create', [AdminController::class, 'createComplaint'])->name('admin.complaints.create');
+    Route::post('/complaints/{id}/destroy', [AdminController::class, 'destroyComplaint'])->name('admin.complaints.destroy');
+    //audit-logs
+    Route::get('/audit-logs', [AdminController::class, 'viewAuditLogs'])->name('admin.audit-logs');
 });
 
 require __DIR__ . '/auth.php';
